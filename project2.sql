@@ -4,16 +4,22 @@ FROM [project2].[dbo].['credit_data origi (1)$']
 WHERE [saving acc] is NULL
 AND [checking acc] is NULL
 
+
+
 -- DELETE WHERE THEY ARE NULL VALUES // [project2].[dbo].['credit_data origi (1)$']
 DELETE 
 FROM [project2].[dbo].['credit_data origi (1)$']
 WHERE [saving acc] is NULL
 AND [checking acc] is NULL
 
+
+    
 -- CHECK FOR ACCOMMODATION NUMBER
 SELECT housing, COUNT(customer_id) as num_accommodation
 FROM [project2].[dbo].['credit_data origi (1)$']
 GROUP BY housing;
+
+
 
 -- CHECK FOR EMPLOY, UNEMPLOYED, 
 SELECT job, COUNT(customer_id) as customer_count
@@ -21,11 +27,13 @@ FROM [project2].[dbo].['credit_data origi (1)$']
 GROUP BY job
 
 
+
 --CHECK FOR CUSTOMERS' LOAN PURPOSES
 SELECT [loan purpose],
 COUNT(customer_id)
 FROM [project2].[dbo].['credit_data origi (1)$']
 GROUP BY [loan purpose]
+
 
 -- CHECK FOR age-range
 WITH categorized_ages AS (
